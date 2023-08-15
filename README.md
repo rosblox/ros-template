@@ -1,6 +1,6 @@
 # ROS Container with Shared Memory Transport
 
-This repository is a collection of files/scripts to conveniently build and run ROS 2 packages inside a Docker container and have shared memory transport between ROS 2 nodes run inside the container and on its host enabled.
+This repository is a collection of files/scripts to conveniently build and run ROS 2 packages inside a Docker container and have shared memory transport between ROS 2 nodes run inside the container and on the host enabled.
 
 ## Problem
 
@@ -18,7 +18,9 @@ Transmitting images between Docker container and host using shared memory transp
 1. running the container with specific options, `--network=host --ipc=host --pid=host`, and 
 2. running ROS 2 nodes inside the container by a user with the same ID as the user of the host.  
 
-This repository shows the most convenient setup (that I could find so far) to build and run ROS packages inside a Docker container and enables shared memory transport between ROS 2 nodes inside the container and on its host. The setup involves: 
+## Contribution
+
+This repository shows the most convenient setup (that I could find so far) to build and run ROS packages inside a Docker container and enables shared memory transport between ROS 2 nodes inside the container and on the host. The setup involves: 
 - `build.sh` and `run.sh` scripts to build/run the container with the correct options
 - `ros_entrypoint.sh` that creates a user inside with matching user/group IDs at startup
 - `build` and `run` aliases inside the container to build/run colcon workspace as correct user
