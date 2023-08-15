@@ -1,4 +1,4 @@
-# ROS Template
+# ROS Container with Shared Memory Transport
 
 This repository is a collection of files/scripts to conveniently build and run ROS 2 packages inside a Docker container and have shared memory transport between ROS 2 nodes run inside the container and on its host enabled.
 
