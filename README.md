@@ -1,7 +1,3 @@
-<style type="text/css">
-    ol { list-style-type: upper-alpha; }
-</style>
-
 # ROS Template
 
 This repository is a collection of files/scripts to conveniently build and run ROS 2 packages inside a Docker container and have shared memory transport between ROS 2 nodes run inside the container and on its host enabled.
