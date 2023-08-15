@@ -18,7 +18,7 @@ Transmitting images between Docker container and host using shared memory transp
 1. running the container with specific options, `--network=host --ipc=host --pid=host`, and 
 2. running ROS 2 nodes inside the container by a user with the same ID as the user of the host.  
 
-## Contribution
+## Implementation
 
 This repository shows the most convenient setup (that I could find so far) to build and run ROS packages inside a Docker container and enable shared memory transport between ROS 2 nodes inside the container and on the host. The setup involves: 
 - `build.sh` and `run.sh` scripts to build/run the container with the correct options
