@@ -8,6 +8,7 @@ When running ROS 2 nodes inside a container and on its host, we might want to tr
 
 - [Troubles communicating with ROS2 node in docker container](https://stackoverflow.com/questions/65900201/troubles-communicating-with-ros2-node-in-docker-container) 
 - [ROS2 galactic nodes can't communicate through docker container border](https://answers.ros.org/question/387076/ros2-galactic-nodes-cant-communicate-through-docker-container-border)  
+- [ROS2-foxy nodes can't communicate through docker container border](https://answers.ros.org/question/370595/ros2-foxy-nodes-cant-communicate-through-docker-container-border)
 - [Failed to exchange Messages between two docker containers when run on host network option.(--network=host)](https://github.com/eProsima/Fast-DDS/issues/2624)
 - [ROS2 topics on Docker detected by host but can't subscribe](https://github.com/eProsima/Fast-DDS/issues/2956)
 - [Running discovery process as root breaks existing processes running as normal user when SHM is used](https://github.com/eProsima/Fast-DDS/issues/3475)
