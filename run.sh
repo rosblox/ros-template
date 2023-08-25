@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ROS_DISTRO=humble
+
 REPOSITORY_NAME="$(basename "$(dirname -- "$( readlink -f -- "$0"; )")")"
 
 docker run -it --rm \
@@ -7,4 +9,4 @@ docker run -it --rm \
 --ipc=host --pid=host \
 --env UID=$(id -u) \
 --env GID=$(id -g) \
-ghcr.io/rosblox/${REPOSITORY_NAME}:humble
+ghcr.io/rosblox/${REPOSITORY_NAME}:${ROS_DISTRO}
