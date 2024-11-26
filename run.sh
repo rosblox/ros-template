@@ -1,10 +1,10 @@
 #!/bin/bash
 
-REPOSITORY_NAME="$(basename "$(dirname -- "$( readlink -f -- "$0"; )")")"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-docker run -it --rm \
---network=host \
---ipc=host --pid=host \
---env UID=$(id -u) \
---env GID=$(id -g) \
-ghcr.io/rosblox/${REPOSITORY_NAME}:humble
+export HOST_UID=$(id -u)
+
+docker compose -f $SCRIPT_DIR/docker-compose.yml run \
+--volume $(pwd)/livox_ros_driver2:/colcon_ws/src/livox_ros_driver2 \
+--volume $(pwd)/Livox-SDK2:/Livox-SDK2 \
+ros-livox-ros-driver2 bash

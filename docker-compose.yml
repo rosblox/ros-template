@@ -1,0 +1,14 @@
+services:
+  ros-template:
+    image: ghcr.io/rosblox/ros-template:humble
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    network_mode: "host"
+    ipc: host
+    pid: host
+    environment:
+      - UID=${HOST_UID}
+      - ROS_DOMAIN_ID
+    command: su - ros --whitelist-environment=ROS_DOMAIN_ID /run.sh

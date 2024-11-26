@@ -1,5 +1,7 @@
 #!/bin/bash
 
-REPOSITORY_NAME="$(basename "$(dirname -- "$( readlink -f -- "$0"; )")")"
+export BUILDKIT_PROGRESS=plain
 
-docker build --progress=plain -t ghcr.io/rosblox/${REPOSITORY_NAME}:humble .
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+docker compose -f $SCRIPT_DIR/docker-compose.yml build 
