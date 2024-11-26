@@ -22,5 +22,5 @@ ENV LAUNCH_COMMAND='ros2 topic pub /talker std_msgs/msg/String "{data: Hello wor
 
 # Create build and run aliases
 RUN echo 'alias build="colcon build --symlink-install  --event-handlers console_direct+"' >> /etc/bash.bashrc && \
-    echo 'alias run="su - ros /run.sh"' >> /etc/bash.bashrc && \
-    echo "source /colcon_ws/install/setup.bash; $LAUNCH_COMMAND" >> /run.sh && chmod +x /run.sh
+    echo 'alias run="su - ros --whitelist-environment=\"ROS_DOMAIN_ID\" /run.sh"' >> /etc/bash.bashrc && \
+    echo "source /colcon_ws/install/setup.bash; echo UID: $UID; echo ROS_DOMAIN_ID: $ROS_DOMAIN_ID; $LAUNCH_COMMAND" >> /run.sh && chmod +x /run.sh
